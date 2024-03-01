@@ -1,0 +1,91 @@
+@import "src/globalstyles.scss";
+
+label {
+    display: block;
+}
+
+.librariesContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    animation: fade-in 150ms $curve forwards;
+    margin-top: $content-margin*2;
+}
+
+.userlibraries, .register {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: $content-margin*2;
+}
+
+.register {
+    display: flex;
+    padding: $box-padding;
+}
+
+.searchInputContainer {
+    width: 340px;
+    margin-right: $content-margin;
+}
+
+.versionContainer {
+    width: 240px;
+    margin-right: $content-margin;
+}
+
+.submitContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    label {
+        color: white;
+    }
+
+    button {
+        flex: 1;
+    }
+}
+
+.userlibraries {
+    box-sizing: border-box;
+    margin-bottom: $content-margin*2;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    row-gap: $box-padding;
+    column-gap: $box-padding;
+}
+
+.header {
+    font-size: 2rem;
+    color: $gray;
+    margin-top: $content-margin*2;
+}
+
+.img {
+    flex: 1;
+}
+
+@include media(">tablet", "<desktop") {    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include media(">phone", "<tablet") {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@include media(">smphone", "<phone") {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

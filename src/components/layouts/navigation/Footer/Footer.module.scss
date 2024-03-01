@@ -1,0 +1,44 @@
+@import "src/globalstyles.scss";
+
+.footer {
+    @if $DEBUG {
+        border: 1px solid $gray;
+    }
+    
+    display: flex;
+    align-items: center;
+    padding: $box-padding*8 $box-padding $box-padding $box-padding;
+    color: $lightgray;
+}
+
+.brandname {
+    background: none;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: $lightgray;
+    font-size: 1.8rem;
+}
+
+.dot {
+    margin: 2px $content-margin 0 $content-margin;
+}
+
+.link a {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $lightgray;
+}
+
+.copyright {
+    margin: 2px $content-margin 0 ($content-margin+6px) ;
+}
+
+@include media(">smphone", "<phone") {
+    .brandname {
+        font-size: 1.2rem;
+    }
+
+    .link a {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,55 @@
+@import "src/globalstyles.scss";
+
+label {
+    display: block;
+}
+
+.padded {
+    padding: $box-padding;
+}
+
+.register {
+    display: flex;
+    background-color:rgba(255, 255, 255, 0.6);
+}
+
+.searchContainer {
+    flex: 3;
+    margin-right: $content-margin;
+}
+
+.versionContainer {
+    flex: 2;
+    margin-right: $content-margin;
+}
+
+@include media(">tablet", "<desktop") {
+    .register {
+        flex-direction: column;
+    }
+
+    .searchContainer {
+        margin-bottom: $content-margin;
+    }
+}
+
+@include media(">phone", "<tablet") {
+    .register {
+        flex-direction: column;
+    }
+
+    .searchContainer {
+        margin-bottom: $content-margin;
+    }
+}
+
+
+@include media(">smphone", "<phone") {
+    .register {
+        flex-direction: column;
+    }
+
+    .searchContainer {
+        margin-bottom: $content-margin;
+    }
+}

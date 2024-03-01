@@ -1,0 +1,116 @@
+@import "src/globalstyles.scss";
+
+.vulnerabilitiesContainer {
+    flex: 1;
+    display: flex;
+    animation: fade-in 150ms $curve forwards;
+    margin-top: 6px;
+}
+
+.uservulnerabilities {
+    padding: 0 $box-padding*2 $box-padding*2 $box-padding*2;
+    flex: 1;
+    border-right: 1px solid $mdgray;
+}
+
+.infoContainer {
+    padding: $box-padding*2;
+    flex: 1;
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        color: $primary-color;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+}
+
+.infoBox {
+    display: flex;
+    margin-top: $content-margin;
+    gap: $content-margin*3;
+    margin-bottom: $content-margin*2;
+}
+
+.header {
+    font-size: 2rem;
+    color: $gray;
+    margin-bottom: $content-margin*2;
+}
+
+.descriptionBox {
+    margin-bottom: $content-margin*2;
+}
+
+.sourceBox {
+    margin-bottom: $content-margin;
+
+    a {
+        font-size: 1.4rem;
+        color: $secondary-color;
+        text-decoration: underline;
+    }
+}
+
+.vulnHeaders {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    h3 {
+        display: block;
+
+        &:nth-child(1) {
+            flex: 1;
+            margin-right: $content-margin;
+        }
+
+        &:nth-child(2) {
+            flex: 1;
+            margin-right: $content-margin;
+        }
+
+        &:nth-child(3) {
+            flex: 1;
+            margin-right: $content-margin;
+        }
+    }
+}
+
+@include media(">tablet", "<desktop") {
+    .vulnerabilitiesContainer {
+        flex-direction: column;
+    }
+    
+    .uservulnerabilities {
+        border-right: none;
+        border-bottom: 1px solid $mdgray;
+    }
+}
+
+@include media(">phone", "<tablet") {
+    .vulnerabilitiesContainer {
+        flex-direction: column;
+    }
+
+    .uservulnerabilities {
+        border-right: none;
+        border-bottom: 1px solid $mdgray;
+    }
+}
+
+
+@include media(">smphone", "<phone") {
+    .vulnerabilitiesContainer {
+        flex-direction: column;
+    }
+
+    .uservulnerabilities {
+        border-right: none;
+        border-bottom: 1px solid $mdgray;
+    }
+}

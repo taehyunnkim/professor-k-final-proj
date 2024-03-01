@@ -1,0 +1,162 @@
+@import "./media.scss";
+
+$DEBUG: false;
+
+// Font Familes
+$brand-font : "Fira Sans", Geneva, sans-serif;
+$app-font : "Nunito", Gill Sans, sans-serif;
+
+// Colors
+$primary-color: #4429E9;
+$secondary-color: #715AFC;
+$primary-gradient: linear-gradient(268.43deg, #4429E9 -496.06%, #715AFC 51.33%);
+$red: #F25022;
+$gray: #919EAB;
+$mdgray: #D9D9D9; 
+$lightgray: #F4F6F9; 
+
+// Color levels
+$critical: #793414;
+$high: #F25022;
+$moderate: #f2ba22;
+$low: #f2ef22;
+
+// Spacing
+$box-padding: 14px;
+$content-margin: 12px;
+$header-margin: 4px;
+$app-margin-top: 100px;
+
+// ETC
+$radius: 5px;
+$shadow: rgba(50, 50, 93, 0.20) 0px 2px 3px -1px, rgba(0, 0, 0, 0.25) 0px 1px 3px -1px;
+$background-rotate: rotate(40deg);
+$background-bar-width: 400px;
+$background-side-color: linear-gradient(90deg, #4429E9, #7c6aef);
+$background-middle-color: #d8dde2;
+
+$desktop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+$smphone: 320px;
+
+// Screen Size
+$breakpoints: (smphone: $smphone,
+               phone: $phone, 
+               tablet: $tablet, 
+               desktop: $desktop) !default;
+
+//Keyframes
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Curves
+$curve: cubic-bezier(0.42, 0, 1, 1);
+
+// Default Config
+* {
+    font-family: $app-font;
+    font-size: 62.5%;
+}
+
+@include media(">tablet", "<desktop") {
+}
+
+@include media(">phone", "<tablet") {
+}
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {   
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-family: $brand-font;
+    font-size: 1.6rem; 
+}
+
+h3 {
+    font-size: 1.4rem; 
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.active {
+    h2 {
+        font-weight: 700!important;
+        color: $secondary-color!important;
+    }
+}
+
+.card-bg {
+    @if $DEBUG {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    // box-shadow: $shadow;
+    border: 1px solid $mdgray;
+    border-radius: $radius;
+    background-color: white;
+}
+
+.brandname {
+    font-family: $brand-font;
+    background: $primary-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $primary-color;
+}
+
+.dot {
+    height: 4px;
+    width: 4px;
+    background-color: $lightgray;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.subheader {
+    font-family: $app-font;
+    margin-bottom: $header-margin;
+    font-weight: 400;
+    font-size: 1.0rem;
+    color: $gray;
+}
+
+.critical {
+    color: $critical;
+}
+
+.high {
+    color: $high;
+}
+
+.moderate {
+    color: $moderate;
+}
+
+.low {
+    color: $low;
+}
+
+// ETC
+.Toastify__toast-container {
+    font-size: 5rem;
+}

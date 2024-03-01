@@ -1,0 +1,106 @@
+@import "src/globalstyles.scss";
+
+.dashboardcontainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.sideNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: $lightgray;
+}
+
+.button {
+    border: 0!important;
+    border-radius: 0!important;
+    padding: $box-padding $box-padding!important;
+    background-color: transparent!important;
+    border-top: 1px solid $red!important;
+}
+
+.navHeader {
+    display: flex;
+    align-items: center;
+    padding: $box-padding*2 $box-padding*2 $box-padding*2 $box-padding*2;
+
+    img {
+        width: 26px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-left: $content-margin;
+    }
+}
+
+.brandPlaceholder {
+    width: 26px;
+}
+
+.active div h2 {
+    font-weight: 700;
+}
+
+.navContent {
+    flex: 1;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    h2 {
+        color: black;
+        font-weight: 300;
+        font-family: $app-font;
+        font-size: 1.4rem;
+    }
+
+    div:last-child {
+        border-bottom: 1px solid $mdgray;
+    }
+}
+
+.navItem {
+    border-top: 1px solid $mdgray;
+    padding: $box-padding $box-padding*2;
+}
+
+.navIcon {
+    width: 20px;
+    margin-right: $content-margin;
+}
+
+.contentContainer {
+    padding: 0 $box-padding 0 $box-padding;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-left: 1px solid $mdgray;
+    border-right: 1px solid $mdgray;
+    background-color: rgb(252, 252, 252);
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    background-color: white;
+    height: 100%;
+    border-left: 1px solid $mdgray;
+    border-right: 1px solid $mdgray;
+    padding: $box-padding*2;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+
+@include media(">tablet", "<desktop") {
+}
+
+@include media(">phone", "<tablet") {
+}

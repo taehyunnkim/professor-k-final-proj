@@ -1,0 +1,93 @@
+@import "src/globalstyles.scss";
+
+.header {
+    margin-top: $app-margin-top;
+    width: 100%;
+}
+
+.authenticatedHeader {
+    margin-top: 40px;
+}
+
+.nav {
+    display: flex;
+    padding: $box-padding;
+    align-items: center;
+}
+
+.authenticatedNav {
+    padding: $box-padding 0;
+}
+
+.landingNav {
+    border: none;
+    box-shadow: none;
+}
+
+.myAccount {
+    color: darkgray;
+    text-decoration: underline;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.brandlogo {
+    height: 38px;
+    margin-right: $content-margin;
+}
+
+.divider {
+    box-sizing: border-box;
+    border-left: 1px solid black;
+    margin-left: $content-margin;
+    margin-right: $content-margin;
+    height: 24px;
+    width: 1px;
+}
+
+.pagename {
+    font-family: $app-font;
+    font-weight: 700;
+}
+
+.spacing {
+    flex: 1;
+    @if $DEBUG {
+        border-bottom: 1px solid red;
+    }
+}
+
+.intro {
+    font-weight: 700;
+    color: black;
+    margin-right: $content-margin;
+}
+
+@include media(">tablet", "<desktop") {
+    .header {
+        margin-top: calc($app-margin-top/2);
+    }  
+}
+
+@include media(">phone", "<tablet") {
+    .header {
+        margin-top: calc($app-margin-top/2);
+    }    
+}
+
+@include media(">smphone", "<phone") {
+    .header {
+        margin-top: calc($app-margin-top/2);
+    }
+
+    
+    .hidden {
+        display: none;
+    }
+
+    .nav {
+        padding: 0;
+    }
+}

@@ -1,0 +1,93 @@
+@import "src/globalstyles.scss";  
+
+.contentContainer {
+  @if $DEBUG {
+    box-sizing: border-box;
+    border: 1px solid $gray;
+  }
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.mainContent {
+  @if $DEBUG {
+    box-sizing: border-box;
+    border: 1px solid $gray;
+  }
+
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.flexCenter {
+  align-items: center;
+}
+
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 2000px;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%) $background-rotate;
+  z-index: -1;
+}
+
+.backgroundGradient {
+  position: fixed;
+  height: 45vh;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -10;
+  background: linear-gradient(180deg, #FFFFFF 0%, $secondary-color 100%);
+}
+
+.lineLeft {
+  position: absolute;
+  top: -50%;
+  height: 200%;
+  width: $background-bar-width;
+  background-image: linear-gradient(270deg, #FFFFFF -0%, $secondary-color 100%);
+}
+
+.lineMiddle {
+  position: absolute;
+  top: -50%;
+  height: 200%;
+  width: 1px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: repeating-linear-gradient(0deg, white, white 20px, $background-middle-color 20px, $background-middle-color 40px);
+}
+
+.lineRight {
+  position: absolute;
+  right: 0;
+  top: -50%;
+  height: 200%;
+  width: $background-bar-width;
+  background-image: linear-gradient(90deg, #FFFFFF 0%, $secondary-color 100%);
+}
+
+.footerStyle {
+  color: $gray;
+
+  h1, p, a {
+    color: $gray!important;
+  }
+
+  span {
+    background-color: $gray;
+  }
+}
+
+@include media(">tablet", "<desktop") {
+}
+
+@include media(">phone", "<tablet") {
+}
