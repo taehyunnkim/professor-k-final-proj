@@ -10,7 +10,7 @@ export default function Footer(props) {
             <span className={"dot " + styles.dot}></span>
             <p className={styles.link}><a href="/">Privacy Policy</a></p>
 
-            <p className={styles.copyright}>© 2023</p>
+            <p className={styles.copyright}>© 2024</p>
         </footer>
     );
 };
