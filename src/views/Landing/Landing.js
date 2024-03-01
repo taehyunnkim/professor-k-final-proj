@@ -21,7 +21,7 @@ export default function Landing({ handleLogin }) {
                         <div className={`${styles.panel} ${styles.leftpanel}`}>
                             <div className={styles.intro}>
                                 <h1>Application Security</h1>
-                                <h1>Made Simple.</h1>
+                                <h1>Made Simple!!!</h1>
                                 <p>You shouldn't need to be a security expert to secure your projects from vulnerabilities.</p>
                                 <p>We proactively scan your Node.js libraries for vulnerabilities and sends alerts to you.</p>
                                 <Button
