@@ -1,20 +1,12 @@
 # Build stage
-FROM node:14 AS build
-ENV PORT=7777
-WORKDIR /app/frontend
-COPY frontend/package*.json ./
+FROM node:21-alpine AS build
+WORKDIR /app
+COPY package*.json .
 RUN npm install
-COPY frontend/ ./
-RUN sed -i 's#http://localhost:7777/#https://vulnalert.app/#' src/authConfig.js
+COPY . .
 RUN npm run build
 
-
-# Production stage
-FROM node:14-alpine
-WORKDIR /app/backend
-COPY backend/package*.json ./
-RUN npm install --production
-COPY backend/ ./
-COPY --from=build /app/frontend/build /app/frontend/build
-EXPOSE $PORT
-CMD ["npm", "run", "deploy"]
+# Runtime stage
+FROM nginx:alpine AS runtime
+WORKDIR /usr/share/nginx/html
+COPY --from=build /app/build .
